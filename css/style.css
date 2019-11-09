@@ -1,0 +1,12 @@
+body {
+    background-color: rgba(190, 110, 86, 0.932);
+}
+
+h1 {
+    font-size: 16px;
+}
+
+.salmon-logo {
+    height: 20px;
+    width: 20px;
+}
