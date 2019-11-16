@@ -56,19 +56,19 @@ Store.prototype.calcCookies = function() {
 //Render table body
 var render = function() {
     var tbodyEl = document.createElement('tbody');
-    
+    //populates first column with store names
     for (var i = 0; i < allStores.length; i++) {
         var trEl = document.createElement('tr');
         var tdEl = document.createElement('td');
         tdEl.textContent = allStores[i].name;
         trEl.appendChild(tdEl);
-        
-        
+        //populates each column for total sales per hour
         for (var j = 0; j < allStores[i].arrayCookiesPH.length; j++) {
             var tdEl2 = document.createElement('td');
             tdEl2.textContent = allStores[i].arrayCookiesPH[j];
             trEl.appendChild(tdEl2);
         }
+        //populates store totals column
         var tdEl3 = document.createElement('td');
         tdEl3.textContent = allStores[i].cookiesPD;
         trEl.appendChild(tdEl3);
@@ -108,15 +108,23 @@ renderHeader();
 var renderFooter =function() {
     var tfootEl = document.createElement('tfoot');
     var trEl = document.createElement('tr');
-    
+
     var tdEl = document.createElement('td')
     tdEl.textContent = 'Totals';
     trEl.appendChild(tdEl);
-
-    for (var i = 0; i < hours.length; i++) {
+    
+    //populates hourly totals
+    for (var i = 0; i < hours.length - 2; i++) {
         var tdEl4 = document.createElement('td');
-        tdEl4.textContent = 'test';
+        //FIX LINE BELOW & MAKE THIS FUNCTIONAL
+        tdEl4.textContent = '?';
+        trEl.appendChild(tdEl4);
     }
+
+    var tdEl5 = document.createElement('td');
+    //FIX LINE BELOW & MAKE THIS FUNCTIONAL
+    tdEl5.textContent = 'test?';
+    trEl.appendChild(tdEl5);
 
     tfootEl.appendChild(trEl);
     table.appendChild(tfootEl);
