@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(190, 110, 86, 0.932);
+    background-color: rgba(201, 125, 102, 0.932);
 }
 
 h1 {
@@ -12,9 +12,20 @@ h1 {
 }
 
 table {
-    width: auto;
-    text-align: center;
     font-size: 14px;
+    border: 0.1em solid black;
+}
+
+td {
+    text-align: center;
+    padding: 0.3em;
+    border: 0.1em solid black;
+}
+
+th {
+    padding: 0.5em;
+    border: 0.1em solid black;
+    font-weight: bold;
 }
 
 .salmon-logo {
