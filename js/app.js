@@ -1,9 +1,9 @@
 'use strict';
 
+var hours = ['Store', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', ' Totals '];
+
 //Connects table constructed in JS to anchor within sales.html
 var table = document.getElementById('table-container');
-
-var hours = ['Store', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', ' Totals '];
 
 // Return a random number between min and max
 var getRandom = function(min, max) {
@@ -111,7 +111,7 @@ var renderFooter =function() {
     var trEl = document.createElement('tr');
 
     var tdEl = document.createElement('td');
-    tdEl.textContent = 'Totals';
+    tdEl.textContent = 'Hourly Totals';
     trEl.appendChild(tdEl);
     
     //Populates hourly totals to footer
