@@ -141,3 +141,19 @@ renderFooter();
 //     }
 //     allStores[i].genGookiesPH();
 // };
+
+//Add Form Input to Sales Table
+var newStoreForm = document.getElementById('new-store-form');
+newStoreForm.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+    event.preventDefault();
+    var name = event.target.inputNameElement.value;
+    var min = event.target.inputMinCustPH;
+    var max = event.target.inputMaxCustPH;
+    var avg = event.target.inputAvgCookiesPC;
+
+    console.log(`Store: ${name}. Minimum Customers Per Hour: ${min}. Maximum Customers Per Hour: ${max}. Average Cookies Per Customer: ${avg}.`);
+
+    
+};
