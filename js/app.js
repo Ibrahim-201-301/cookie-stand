@@ -1,22 +1,15 @@
 'use strict';
 
 var hours = ['Store', '6:00am', '7:00am', '8:00am', '9:00am', '10:00am', '11:00am', '12:00pm', '1:00pm', '2:00pm', '3:00pm', '4:00pm', '5:00pm', '6:00pm', '7:00pm', ' Totals '];
+var allStores = [];
 
 //Connects table constructed in JS to anchor within sales.html
 var table = document.getElementById('table-container');
 
-// Return a random number between min and max
-var getRandom = function(min, max) {
-    return Math.ceil(Math.random() * (max - min)) + min;
-};
-
 //OBJECT CONSTRUCTOR BEGINS
-
 //PH = Per Hour
 //PC = Per Customer
 //PD = Per Day
-
-var allStores = [];
 
 function Store(name, minCustPH, maxCustPH, avgCookiesPC) {
     this.name = name;
@@ -26,16 +19,14 @@ function Store(name, minCustPH, maxCustPH, avgCookiesPC) {
     this.arrayCustPH = [];
     this.arrayCookiesPH = [];
     this.cookiesPD = 0;
-    // this.genCookiesPH = [];
-
+    //
+    this.calcCust();
+    // 
+    this.calcCookies();
+    
     allStores.push(this);
 }
-
-new Store('Seattle', 23, 65, 6.3);
-new Store('Tokyo', 3, 24, 1.2);
-new Store('Dubai', 11, 38, 3.7);
-new Store('Paris', 20, 38, 2.3);
-new Store('Lima', 2, 16, 4.6);
+//End of Constructor
 
 // Calculate the customers per hour
 Store.prototype.calcCust = function() {
@@ -45,14 +36,34 @@ Store.prototype.calcCust = function() {
     }
 };
 
+// Return a random number between min and max
+var getRandom = function(min, max) {
+    return Math.ceil(Math.random() * (max - min)) + min;
+};
+
 // Calculates cookies per hour and increments total cookies sold per day
 Store.prototype.calcCookies = function() {
     for (var i = 0; i < this.arrayCustPH.length; i++) {
-        var cookies = Math.round(this.arrayCustPH[i] * this.avgCookiesPC);
+        var cookies = Math.ceil(this.arrayCustPH[i] * this.avgCookiesPC);
         this.arrayCookiesPH.push(cookies);
         this.cookiesPD += cookies;
     }
 };
+
+//Render table head
+var renderHeader = function() {
+    var theadEl = document.createElement('thead');
+    var trEl = document.createElement('tr');
+
+    for (var i = 0; i < hours.length; i++) {
+        var thEl = document.createElement('th');
+        thEl.textContent = hours[i];
+        trEl.appendChild(thEl);
+    }
+
+    theadEl.appendChild(trEl);
+    table.appendChild(theadEl);
+}
 
 //Render table body --- change to prototype?
 var render = function() {
@@ -77,83 +88,70 @@ var render = function() {
     }
     table.appendChild(tbodyEl);
 };
-//End of Constructor
-
-//Call Prototype Helper methods
-var calc = function(){
-    for (var i = 0; i < allStores.length; i++) {
-        allStores[i].calcCust();
-        allStores[i].calcCookies();
-    }
-    render();
-}
-calc();
-
-//Render table head
-var renderHeader = function() {
-    var theadEl = document.createElement('thead');
-    var trEl = document.createElement('tr');
-
-    for (var i = 0; i < hours.length; i++) {
-        var thEl = document.createElement('th');
-        thEl.textContent = hours[i];
-        trEl.appendChild(thEl);
-    }
-
-    theadEl.appendChild(trEl);
-    table.appendChild(theadEl);
-}
-renderHeader();
 
 //Render table footer
 var renderFooter =function() {
     var tfootEl = document.createElement('tfoot');
     var trEl = document.createElement('tr');
-
     var tdEl = document.createElement('td');
+
     tdEl.textContent = 'Hourly Totals';
     trEl.appendChild(tdEl);
     
     //Populates hourly totals to footer
     for (var i = 0; i < hours.length - 2; i++) {
+        var hourlyTotals = 0;
         var tdEl4 = document.createElement('td');
-        //FIX LINE BELOW & MAKE THIS FUNCTIONAL
-        tdEl4.textContent = 'test';
+
+        for (var j = 0; j < allStores.length; j++) {
+            hourlyTotals += allStores[j].arrayCookiesPH[i];
+        }
+        tdEl4.textContent = hourlyTotals;
         trEl.appendChild(tdEl4);
     }
 
     var tdEl5 = document.createElement('td');
-    //FIX LINE BELOW & MAKE THIS FUNCTIONAL
-    tdEl5.textContent = 'test2';
+
+    var allCooks = 0
+    for (var j = 0; j < allStores.length; j++) {
+        allCooks += allStores[j].cookiesPD;
+    }
+    tdEl5.textContent = allCooks;
+
     trEl.appendChild(tdEl5);
     tfootEl.appendChild(trEl);
     table.appendChild(tfootEl);
 }
-renderFooter();
-
-// //testing how to populate hourly totals for footer
-// Store.prototype.genCookiesPH = function() {
-//  for (var i = 0; i < hours.length; i++) {
-//     var footerCookies = Math.ceil(this.avgCookiesPC * getRandom(this.minCustPH, this.maxCustPH));
-//     this.genCookiesPH.push(footerCookies);
-//     this.cookiesPD += footerCookies;
-//     Store.allStoresTotal += footerCookies;
-//     }
-//     allStores[i].genGookiesPH();
-// };
 
 //Add Form Input to Sales Table
 var newStoreForm = document.getElementById('new-store-form');
 newStoreForm.addEventListener('submit', handleSubmit);
 
+//Button Push
 function handleSubmit(event) {
     event.preventDefault();
+    console.log("allstores", allStores);
     var name = event.target.inputNameElement.value;
-    var min = event.target.inputMinCustPH;
-    var max = event.target.inputMaxCustPH;
-    var avg = event.target.inputAvgCookiesPC;
-
-    console.log(`Store: ${name}. Minimum Customers Per Hour: ${min}. Maximum Customers Per Hour: ${max}. Average Cookies Per Customer: ${avg}.`);
-
-    
+    var min = event.target.inputMinCustPH.value;
+    var max = event.target.inputMaxCustPH.value;
+    var avg = event.target.inputAvgCookiesPC.value;
+    //create new instance upon button push
+    new Store(name, min, max, avg);
+    //clear table data before repopulating to include values from "New Store Data"
+    table.innerHTML = "";
+    //re-render table upon button push
+    renderHeader();
+    render();
+    renderFooter();
 };
+
+new Store('Seattle', 23, 65, 6.3);
+new Store('Tokyo', 3, 24, 1.2);
+new Store('Dubai', 11, 38, 3.7);
+new Store('Paris', 20, 38, 2.3);
+new Store('Lima', 2, 16, 4.6);
+
+// function calls to maintain table's appearance on page
+renderHeader();
+render();
+renderFooter();
