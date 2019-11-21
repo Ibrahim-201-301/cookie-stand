@@ -36,9 +36,42 @@ th {
     font-weight: bold;
 }
 
+.stores {
+    margin: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.stores h3 {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 #logo {
     display: inline-block;
-    width: 90%;
+    width: 100%;
     margin: auto;
     border: 0.1px solid black;
+    padding: 0px, 50px;
+}
+
+#store-info-left {
+    padding: 5px;
+    float: left;
+}
+
+#store-info-left li {
+    padding: 15px;
+}
+
+#store-info-right {
+    padding: 5px;
+}
+
+#store-info-right li {
+    padding: 10px;
 }
