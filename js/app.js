@@ -19,9 +19,7 @@ function Store(name, minCustPH, maxCustPH, avgCookiesPC) {
     this.arrayCustPH = [];
     this.arrayCookiesPH = [];
     this.cookiesPD = 0;
-    //
     this.calcCust();
-    // 
     this.calcCookies();
     
     allStores.push(this);
@@ -63,9 +61,9 @@ var renderHeader = function() {
 
     theadEl.appendChild(trEl);
     table.appendChild(theadEl);
-}
+};
 
-//Render table body --- change to prototype?
+//Render table body
 var render = function() {
     var tbodyEl = document.createElement('tbody');
     //Populates first column with store names
@@ -121,7 +119,7 @@ var renderFooter =function() {
     trEl.appendChild(tdEl5);
     tfootEl.appendChild(trEl);
     table.appendChild(tfootEl);
-}
+};
 
 //Add Form Input to Sales Table
 var newStoreForm = document.getElementById('new-store-form');
@@ -130,7 +128,7 @@ newStoreForm.addEventListener('submit', handleSubmit);
 //Button Push
 function handleSubmit(event) {
     event.preventDefault();
-    console.log("allstores", allStores);
+    // console.log("allstores", allStores);
     var name = event.target.inputNameElement.value;
     var min = event.target.inputMinCustPH.value;
     var max = event.target.inputMaxCustPH.value;
@@ -155,3 +153,5 @@ new Store('Lima', 2, 16, 4.6);
 renderHeader();
 render();
 renderFooter();
+
+newStoreForm.reset();
