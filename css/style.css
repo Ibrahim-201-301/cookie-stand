@@ -2,15 +2,61 @@ body {
     background-color: rgba(201, 125, 102, 0.932);
 }
 
+header {
+    background-color: #fff;
+    padding: 50px;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: rgb(245, 218, 184);
-    font-size: 40px;
-    text-align: center;
-    display: block;
+    color: rgba(30, 44, 31, 0.719);
+    font-size: 60px;
+    float: left;
+    display: inline-block;
 }
 
+#logo {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 0px, 5px;
+}
+
+#salmon-logo {
+    display: inline;
+}
+
+#chinook {
+    max-width: 50%;
+    height: auto;
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+li a {
+    display: inline;
+    padding: 20px;
+    float: left;
+    margin-left: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color:#000;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* The following table, td, & th stylings apply to JS table for sales.html */
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -18,7 +64,6 @@ h2 {
     font-size: 25px;
     display: block;
 }
-
 table {
     font-size: 14px;
     border: 0.1em solid black;
@@ -35,43 +80,29 @@ th {
     border: 0.1em solid black;
     font-weight: bold;
 }
+/* end sales.html styling*/
 
+/* homepage store info styling */
 .stores {
     margin: 10px;
-    border: 1px solid black;
+    border: 1px transparent;
+    background-color: bisque;
     padding: 10px;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 }
 
 .stores h3 {
     text-align: center;
-    text-decoration: underline;
+    font-size: 20px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#logo {
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-    border: 0.1px solid black;
-    padding: 0px, 50px;
-}
-
-#store-info-left {
-    padding: 5px;
-    float: left;
-}
-
-#store-info-left li {
-    padding: 15px;
-}
-
-#store-info-right {
-    padding: 5px;
-}
-
-#store-info-right li {
+    color: rgba(139, 64, 41, 0.932);
     padding: 10px;
+}
+
+
+#storetable {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
 }
