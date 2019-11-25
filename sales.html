@@ -4,38 +4,44 @@
         <title>Sales</title>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
-            <h1>Sales</h1>
             <h1><a href="index.html">Home</a></h1>
+            <h1>Sales</h1>
         </header>
         <main>
             <br><br>
-            <table id="table-container"></table>
-            <br><br><br>
-            <h2>New Store Data</h2>
-            <br>
-            <form id="new-store-form">
-                <fieldset>
-                    <label>Store Name:</label>
-                    <input id="inputNameElement" type="text" placeholder="enter shop location (city)">
+            <div id="tablediv">
+                <div id="new-store-data">
+                    <h2>New Store Data</h2>
                     <br>
-                    <label>Minimum Customers Per Hour:</label>
-                    <input id="inputMinCustPH" type="number" placeholder="enter a round number">
-                    <br>
-                    <label>Maximum Customers Per Hour:</label>
-                    <input id="inputMaxCustPH" type="number" placeholder="enter a round number">
-                    <br>
-                    <label>Average Cookies Per Customer:</label>
-                    <input id="inputAvgCookiesPC" type="text" placeholder="enter actual number">
-                    <br>
-                    <button value="submit">Add to Table</button>
-                </fieldset>
-            </form> 
+                    <form id="new-store-form">
+                        <fieldset>
+                            <label>Store Name:</label>
+                            <br>
+                            <input id="inputNameElement" type="text" placeholder="enter shop location">
+                            <br><br>
+                            <label>Minimum Customers Per Hour:</label>
+                            <br>
+                            <input id="inputMinCustPH" type="number" placeholder="enter a round number">
+                            <br><br>
+                            <label>Maximum Customers Per Hour:</label><br>
+                            <input id="inputMaxCustPH" type="number" placeholder="enter a round number">
+                            <br><br>
+                            <label>Average Cookies Per Customer:</label>
+                            <br>
+                            <input id="inputAvgCookiesPC" type="text" placeholder="enter number">
+                            <br><br>
+                            <button value="submit">Add to Table</button>
+                        </fieldset>
+                    </form> 
+                </div>
+                <table id="table-container"></table>
+            </div>
         </main>
         <footer>
-       
         </footer>
         <script src = "js/app.js"></script>
     </body>

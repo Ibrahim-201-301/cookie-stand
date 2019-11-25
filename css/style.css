@@ -8,7 +8,7 @@ header {
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fredoka One', cursive;
     font-weight: bold;
     color: rgba(30, 44, 31, 0.719);
     font-size: 60px;
@@ -58,25 +58,34 @@ li a {
 
 /* The following table, td, & th stylings apply to JS table for sales.html */
 h1 a {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fredoka One', cursive;
     font-weight: bold;
     text-decoration: none;
     color: rgba(30, 44, 31, 0.719);
     font-size: 40px;
-    margin-left: 60px;
+    margin-right: 110px;
     display: inline-block;
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Fredoka One', cursive;
     font-weight: bold;
     color: rgb(245, 218, 184);
     font-size: 25px;
     display: block;
 }
-table {
+
+.about-us h2 {
+    font-size: 40px;
+    color: rgb(255, 250, 245)
+}
+
+#table-container {
     font-size: 14px;
-    border: 0.1em solid black;
+    margin: auto;
+    display: inline-block;
+    padding-left: 100px;
+    padding-bottom: 125px;
 }
 
 td {
@@ -90,6 +99,24 @@ th {
     border: 0.1em solid black;
     font-weight: bold;
 }
+
+#tablediv {
+    width: 100%;
+}
+
+#new-store-data {
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+label {
+    font-family: Georgia;
+}
+
+button {
+    background-color: bisque;
+}
 /* end sales.html styling*/
 
 /* homepage store info styling */
@@ -101,6 +128,7 @@ th {
     padding: 10px;
     width: 300px;
     height: 175px;
+    text-align: center;
 }
 
 .store h3 {
@@ -115,6 +143,7 @@ th {
 
 #storetable {
     font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
     border: none;
 }
 
