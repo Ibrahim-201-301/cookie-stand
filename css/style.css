@@ -26,10 +26,11 @@ h1 {
 
 #salmon-logo {
     display: inline;
+    max-width: 30%;
 }
 
 #chinook {
-    max-width: 50%;
+    max-width: 20%;
     height: auto;
     float: right;
 }
@@ -155,6 +156,11 @@ button {
     font-family: Arial, Helvetica, sans-serif;
     color: rgba(139, 64, 41, 0.932);
     padding: 10px;
+}
+
+.store th, td {
+    border: transparent;
+    text-align: left;
 }
 
 
