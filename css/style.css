@@ -35,13 +35,19 @@ h1 {
     float: right;
 }
 
+#about-us {
+    width: 520px;
+}
+
+#about-us h2 {
+    font-size: 40px;
+    color: rgb(255, 250, 245);
+    padding: 10px;
+}
+
 #familyphoto {
     width: 300px;
     height: auto;
-}
-
-#about-us {
-    width: 520px;
 }
 
 #about-us p {
@@ -74,70 +80,6 @@ li a {
     text-decoration: none;
 }
 
-/* The following table, td, & th stylings apply to JS table for sales.html */
-h1 a {
-    font-family: 'Fredoka One', cursive;
-    font-weight: bold;
-    text-decoration: none;
-    color: rgba(30, 44, 31, 0.719);
-    font-size: 40px;
-    margin-right: 110px;
-    display: inline-block;
-}
-
-h2 {
-    font-family: 'Fredoka One', cursive;
-    font-weight: bold;
-    color: rgb(245, 218, 184);
-    font-size: 25px;
-    display: block;
-}
-
-.about-us h2 {
-    font-size: 40px;
-    color: rgb(255, 250, 245)
-}
-
-#table-container {
-    font-size: 14px;
-    margin: auto;
-    display: inline-block;
-    padding-left: 100px;
-    padding-bottom: 125px;
-}
-
-td {
-    text-align: center;
-    padding: 0.3em;
-    border: 0.1em solid black;
-}
-
-th {
-    padding: 0.5em;
-    border: 0.1em solid black;
-    font-weight: bold;
-}
-
-#tablediv {
-    width: 100%;
-}
-
-#new-store-data {
-    width: 200px;
-    text-align: center;
-    display: inline-block;
-}
-
-label {
-    font-family: Georgia;
-}
-
-button {
-    background-color: bisque;
-}
-/* end sales.html styling*/
-
-/* homepage store info styling */
 .store {
     display: inline-block;
     margin: 5px;
@@ -188,3 +130,62 @@ button {
     max-width: auto;
     margin-top: 30px;
 }
+
+/* The following table, td, & th stylings apply to JS table for sales.html */
+h1 a {
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(30, 44, 31, 0.719);
+    font-size: 40px;
+    margin-right: 110px;
+    display: inline-block;
+}
+
+h2 {
+    font-family: 'Fredoka One', cursive;
+    font-weight: bold;
+    color: rgb(245, 218, 184);
+    font-size: 25px;
+    display: block;
+}
+
+
+#table-container {
+    font-size: 14px;
+    margin: auto;
+    display: inline-block;
+    padding-left: 100px;
+    padding-bottom: 125px;
+}
+
+td {
+    text-align: center;
+    padding: 0.3em;
+    border: 0.1em solid black;
+}
+
+th {
+    padding: 0.5em;
+    border: 0.1em solid black;
+    font-weight: bold;
+}
+
+#tablediv {
+    width: 100%;
+}
+
+#new-store-data {
+    width: 200px;
+    text-align: center;
+    display: inline-block;
+}
+
+label {
+    font-family: Georgia;
+}
+
+button {
+    background-color: bisque;
+}
+/* end sales.html styling*/
